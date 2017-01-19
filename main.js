@@ -75,17 +75,25 @@ function score(playerCardValue, dealerCardValue, standing, hitting) {
     }
 }
 
+  document.querySelector('#stand').addEventListener('click', function() {
+      checkResult(true, false);
+  });
 
-document.querySelector('#stand').addEventListener('click', function() {
-    checkResult(true, false);
-});
+  document.querySelector('#hit').addEventListener('click', hit);
 
-document.querySelector('#hit').addEventListener('click', hit);
+  document.querySelector('#newGame').addEventListener('click', function() {
+    init();
+  });
 
-let card1 = Math.floor(Math.random() * cards.length);
-let card2 = Math.floor(Math.random() * cards.length);
-let dealer1 = Math.floor(Math.random() * cards.length);
-let dealer2 = Math.floor(Math.random() * cards.length);
+function init() {
+  let card1 = Math.floor(Math.random() * cards.length);
+  let card2 = Math.floor(Math.random() * cards.length);
+  let dealer1 = Math.floor(Math.random() * cards.length);
+  let dealer2 = Math.floor(Math.random() * cards.length);
 
-display.innerHTML = cards[card1] + ' ' + cards[card2];
-dealerDisplay.innerHTML = cards[dealer1];
+  display.innerHTML = cards[card1] + ' ' + cards[card2];
+  dealerDisplay.innerHTML = cards[dealer1];
+  alert.innerHTML = '';
+}
+
+init();
