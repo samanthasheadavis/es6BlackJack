@@ -55,7 +55,6 @@ function checkResult(standing, hitting) {
 }
 
 function score(playerCardValue, dealerCardValue, standing, hitting) {
-    console.log('you: ' + playerCardValue + '   ' + 'dealer: '+ dealerCardValue);
     if (playerCardValue === 21 && dealerCardValue === 21) {
         alert.innerHTML="it's a tie!";
     } else if (playerCardValue === 21) {
